@@ -51,16 +51,26 @@
               "angle": 0,
               "id": "5e8ce8a1-a495-4ea5-a430-a4bf15f526cd",
               "z": 6,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Insufficient Transport Layer Protection",
+                  "type": "Information disclosure",
+                  "description": "This application has failed to encrypt network traffic. SSL/TLS has not been implemented leading which exposes data, credentials and session ID's to interception.",
+                  "mitigation": "It is recommended that Applications should use SSL/TLS for protecting all communications passing between the client and the server."
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Web\nApplication"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -186,6 +196,10 @@
                 {
                   "x": 285,
                   "y": 235
+                },
+                {
+                  "x": 355,
+                  "y": 156
                 }
               ],
               "id": "7f7bd6bc-8bcb-42da-88af-b5132cb9ea91",
@@ -202,13 +216,31 @@
                 }
               ],
               "z": 18,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Weak Easily Guessable Credentials in use",
+                  "type": "Elevation of privilege",
+                  "description": "Application is using Weak easily guessable passwords such as username - admin and password - password.",
+                  "mitigation": "It is recommended to implement a password policy which requires minimum password length to be 8 characters including uppercase, lowercase characters, numbers and special characters."
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Inadequate Account Lockout Policy",
+                  "type": "Elevation of privilege",
+                  "description": "We found that Account lockout mechanisms which are used to prevent brute force attacks for guessing passwords are not implemented.\nLack of Account Lockout mechanisms require a balance between protecting accounts from unauthorized access and protecting users from being denied authorized access.",
+                  "mitigation": "It is recommended to implement Account Lockout Policy which will lockout user accounts after 5 to 10 failed login attempts."
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
