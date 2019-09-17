@@ -1,0 +1,11 @@
+{
+  "summary": {
+    "title": "Test Threat Model for DVWA",
+    "owner": "Test"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "reviewer": "Demo"
+  }
+}
