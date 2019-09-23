@@ -574,6 +574,53 @@
                   "description": "LFI \n\nWe identified a local file inclusion vulnerability, which occurs when a file from the target system is injected into the attacked server page.\n\nWe confirmed this issue by reading some files from the target web server.\n\nRFI\n\nWe identified a Remote file inclusion (RFI) occurs when a file from a remote web server is inserted into a web page. This can be done on purpose to display content from a remote web application. But, it can also happen by accident, due to a misconfiguration of the respective programming language, wchich can lead to a RFI attack.",
                   "mitigation": "If possible, do not permit appending file paths directly. Make them hard-coded or selectable from a limited hard-coded path list via an index variable.\n\nIf you definitely need dynamic path concatenation, ensure you only accept required characters such as \"a-Z0-9\" and do not allow \"..\" or \"/\" or \"%00\" (null byte) or any other similar unexpected characters.\n\nIt is important to limit the API to allow inclusion only from a directory and directories below it. This way you can ensure any potential attack cannot perform a directory traversal attack.\n\nTo prevent exploitation of the RFI vulnerability,  ensure that you disable the remote inclusion feature in your programming languages' configuration, especially if you do not need it. \n\nIn PHP, you can set allow_url_include to '0'. You should also validate user input before passing it to an Include function.\n\nIf you really have to enable remote file inclusions, then work with a whitelist of files that are allowed to be included on your web application.",
                   "type": "Information disclosure"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Unrestricted File Upload",
+                  "description": "File upload vulnerability are a major problem with web based applications. In many web server this vulnerability depend entirely on purpose that allows an attacker to upload a file hiding malicious code inside that can then be executed on the server. An attacker might be able to put a phishing page into the website or deface the website.\n\nAttacker may reveal internal information of web server to other and some chances to sensitive data might be informal, by unauthorized people.",
+                  "mitigation": "Restrict file types accepted for upload: check the file extension and only allow certain files to be uploaded. Use a whitelist approach instead of a blacklist. Check for double extensions such as .php.png. Check for files without a filename like .htaccess (on ASP.NET, check for configuration files like web.config). Change the permissions on the upload folder so the files within it are not executable. If possible, rename the files that are uploaded.",
+                  "type": "Repudiation"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Insecure CAPTCHA",
+                  "type": "Spoofing",
+                  "description": "We found that the application is using Insecure CAPTCHA which can be bypassed using parameter manipulation combined with brute force attacks.",
+                  "mitigation": "It is recommended to allow change of password only if old password is known by the user and kindly perform server side validation of CAPTCHA value submitted by user."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "SQL Injection & SQL Injection (Blind)",
+                  "type": "Tampering",
+                  "description": "SQL injection (SQLi) refers to an injection attack wherein an attacker can execute malicious SQL statements that control a web application's database server.",
+                  "mitigation": "Use parameterized queries when dealing with SQL queries that contains user input. Parameterized queries allows the database to understand which parts of the SQL query should be considered as user input, therefore solving SQL injection."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "description": "Modern web apps establish a series of transactions between the client and the server. Since the HTTP protocol is stateless, the way to follow an user is to create sessions per authenticated user.",
+                  "title": "Weak Session IDs",
+                  "type": "Spoofing",
+                  "mitigation": "It is recommended to generate Strong Session IDs which are highly unpredictable to prevent session hijacking attacks. if the session IDs are not random enough, an attacker can try to brute force them to gain access to the application.\nModern frameworks implement safe, unguessable session IDs. If you are using a recent version of your web toolkit, check to see how the session IDs are generated."
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "CSP Bypass",
+                  "description": "Content Security Policy was introduced to protect from data injection attacks particularly XSS variants. As the web grew more sophisticated and reliant on JavaScript, hackers found increasingly complex ways to exploit the existing browser trust model, i.e. the Same-origin policy (SOP); XSS attacks bypassed the same origin policy by tricking a site into delivering malicious code along with the intended content. Content Security Policy is a declarative mechanism to whitelist sources of content (such as script sources, objects, images) in a web application. Using various directives in CSP, developers can define what content can run on the current site. For example, if JavaScript can be executed inline, or which domains js files can be loaded from.\n\nSites which want to implement CSP, send a special header value in the http responses with the name Content-Security-Policy.",
+                  "type": "Tampering",
+                  "mitigation": "It's not always easy to add CSP to an existing website. There are many factors developers need to consider when they need to decide from where external resources should be loaded. This involves caching, available bandwidth and general performance. Security often ranks low on the list of considerations. In order to effectively implement CSP, you either need to consider it before writing the application (the easiest option) or find a way add it on top of your existing applications with the tools CSP provides, most notably nonces and hashes.\nThe problem with these examples are the commands unsafe-inline and unsafe-eval, which remove most of the protections CSP provides against Cross Site Scripting."
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Cross site scripting (also referred to as XSS) is a vulnerability that allows an attacker to send malicious code (usually in the form of Javascript) to another user. Because a browser cannot know if the script should be trusted or not, it will execute the script in the user context allowing the attacker to access any cookies or session tokens retained by the browser.\n\nWhile a traditional cross-site scripting vulnerability occurs on the server-side code, document object model based cross-site scripting is a type of vulnerability which affects the script code in the client's browser.",
+                  "title": "DOM XSS"
                 }
               ],
               "attrs": {
