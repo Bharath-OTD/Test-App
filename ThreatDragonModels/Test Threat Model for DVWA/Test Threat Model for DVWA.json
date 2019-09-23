@@ -45,8 +45,8 @@
                 "height": 100
               },
               "position": {
-                "x": 377,
-                "y": 60
+                "x": 392,
+                "y": 36
               },
               "angle": 0,
               "id": "5e8ce8a1-a495-4ea5-a430-a4bf15f526cd",
@@ -83,7 +83,7 @@
                   "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "Web\nApplication"
+                  "text": "DVWA Web\nApplication"
                 },
                 ".element-text": {
                   "class": "element-text hasOpenThreats isInScope"
@@ -181,7 +181,10 @@
               "id": "a9c2eb73-1aee-4cfa-921a-8732b286fe3d",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0,
+                    "offset": -1153.008643213929
+                  },
                   "attrs": {
                     "text": {
                       "text": "Web App Query\nResults",
@@ -233,6 +236,10 @@
                 {
                   "x": 167,
                   "y": 218
+                },
+                {
+                  "x": 269,
+                  "y": 131
                 }
               ],
               "id": "7f7bd6bc-8bcb-42da-88af-b5132cb9ea91",
