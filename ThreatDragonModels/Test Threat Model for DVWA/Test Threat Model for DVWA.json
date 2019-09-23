@@ -19,8 +19,8 @@
                 "height": 80
               },
               "position": {
-                "x": 18,
-                "y": 132
+                "x": 50,
+                "y": 61
               },
               "angle": 0,
               "id": "034df550-63b2-48fe-8e20-83f7295ece2e",
@@ -233,7 +233,10 @@
               "id": "7f7bd6bc-8bcb-42da-88af-b5132cb9ea91",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0.6014089480182567,
+                    "offset": -44.26137214840803
+                  },
                   "attrs": {
                     "text": {
                       "text": "Web Request",
@@ -619,8 +622,17 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "Cross site scripting (also referred to as XSS) is a vulnerability that allows an attacker to send malicious code (usually in the form of Javascript) to another user. Because a browser cannot know if the script should be trusted or not, it will execute the script in the user context allowing the attacker to access any cookies or session tokens retained by the browser.\n\nWhile a traditional cross-site scripting vulnerability occurs on the server-side code, document object model based cross-site scripting is a type of vulnerability which affects the script code in the client's browser.",
-                  "title": "DOM XSS"
+                  "description": "DOM Based XSS is an XSS attack wherein the attack payload is executed because of modifying the DOM “environment” in the victim’s browser used by the original client-side script, so that the client-side code runs in an “unexpected” manner. That is, the page itself (the HTTP response that is) does not change, but the client-side code contained in the page executes differently due to the malicious modifications that have occurred in the DOM environment.\n\nAttacker can make use of cross site scripting vulnerability in the application to perform various attacks such as, phishing, temporary defacements, possible introduction of worms.",
+                  "title": "DOM XSS",
+                  "mitigation": "HTML encode the output that is echoed back to the user"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Reflected XSS and Stored XSS",
+                  "type": "Tampering",
+                  "description": "Reflected Cross-site Scripting (XSS) sometimes referred to as Non-Persistent XSS is a vulnerability that allows an attacker to send malicious code (usually in the form of JavaScript) to another user, because a browser cannot know if the script should be trusted or not, it will execute the script in the user context allowing the attacker to access any cookies or session tokens retained by the browser.\n\nCross site scripting (also referred to as XSS) is a vulnerability that allows an attacker to send malicious code (usually in the form of JavaScript) to another use. Stored Cross site scripting is the most dangerous type of Cross Site Scripting. Stored XSS occurs when a web application gathers input from a user which might be malicious, and then stores that input in a data store for later use. A successful exploitation occurs when any user visits a page with stored XSS.\n\nAttacker can make use of cross site scripting vulnerability in the application to perform various attacks such as, phishing, temporary defacements, user session hijacking, possible introduction of worms etc.",
+                  "mitigation": "HTML encode the output that is echoed back to the user.\n\nApply white listing technique to filter out unexpected input."
                 }
               ],
               "attrs": {
