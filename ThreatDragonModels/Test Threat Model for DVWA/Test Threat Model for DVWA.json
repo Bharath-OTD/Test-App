@@ -558,6 +558,22 @@
                   "type": "Tampering",
                   "description": "This application allows user to execute system commands.The rate of this vulnerability is high because it can allow any unauthorized and malicious user to execute commands from the web application to the system and to harvest large amount of information or to compromise the target host.",
                   "mitigation": "This vulnerability exists due to the fact that the web application accepts user input without sanitizing first and passes that input directly to the operating system.The information about the host that an attacker can obtain is large and this threat must be mitigated immediately once it has discovered."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "title": "CSRF",
+                  "description": "Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated. This can result in changing e-mail addresses or stealing money or changing password. In this scenario we will be changing the users password.",
+                  "mitigation": "The most robust way to defend against CSRF attacks is to include a CSRF token within relevant requests. The token should be:\n\nUnpredictable with high entropy, as for session tokens in general.\nTied to the user's session.\nStrictly validated in every case before the relevant action is executed."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Local File Inclusion & Remote File Inclusion",
+                  "description": "LFI \n\nWe identified a local file inclusion vulnerability, which occurs when a file from the target system is injected into the attacked server page.\n\nWe confirmed this issue by reading some files from the target web server.\n\nRFI\n\nWe identified a Remote file inclusion (RFI) occurs when a file from a remote web server is inserted into a web page. This can be done on purpose to display content from a remote web application. But, it can also happen by accident, due to a misconfiguration of the respective programming language, wchich can lead to a RFI attack.",
+                  "mitigation": "If possible, do not permit appending file paths directly. Make them hard-coded or selectable from a limited hard-coded path list via an index variable.\n\nIf you definitely need dynamic path concatenation, ensure you only accept required characters such as \"a-Z0-9\" and do not allow \"..\" or \"/\" or \"%00\" (null byte) or any other similar unexpected characters.\n\nIt is important to limit the API to allow inclusion only from a directory and directories below it. This way you can ensure any potential attack cannot perform a directory traversal attack.\n\nTo prevent exploitation of the RFI vulnerability,  ensure that you disable the remote inclusion feature in your programming languages' configuration, especially if you do not need it. \n\nIn PHP, you can set allow_url_include to '0'. You should also validate user input before passing it to an Include function.\n\nIf you really have to enable remote file inclusions, then work with a whitelist of files that are allowed to be included on your web application.",
+                  "type": "Information disclosure"
                 }
               ],
               "attrs": {
