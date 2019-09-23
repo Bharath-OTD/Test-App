@@ -1,7 +1,8 @@
 {
   "summary": {
     "title": "Test Threat Model for DVWA",
-    "owner": "Test"
+    "owner": "Test",
+    "description": "Sample Threat Model for DVWA Web Application."
   },
   "detail": {
     "contributors": [],
