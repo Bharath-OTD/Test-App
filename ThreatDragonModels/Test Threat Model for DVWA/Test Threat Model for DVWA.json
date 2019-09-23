@@ -99,7 +99,12 @@
               "target": {
                 "id": "034df550-63b2-48fe-8e20-83f7295ece2e"
               },
-              "vertices": [],
+              "vertices": [
+                {
+                  "x": 381,
+                  "y": 64
+                }
+              ],
               "id": "edc26993-1e38-4df1-b986-dd0e58b307dd",
               "labels": [
                 {
