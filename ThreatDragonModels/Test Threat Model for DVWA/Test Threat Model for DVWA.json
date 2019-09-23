@@ -174,24 +174,20 @@
               },
               "vertices": [
                 {
-                  "x": 587,
-                  "y": 34
-                },
-                {
-                  "x": 521,
-                  "y": 21
+                  "x": 552,
+                  "y": 31
                 }
               ],
               "id": "a9c2eb73-1aee-4cfa-921a-8732b286fe3d",
               "labels": [
                 {
                   "position": {
-                    "distance": 0,
-                    "offset": -1153.008643213929
+                    "distance": 0.3636369270867011,
+                    "offset": 33.61052214543645
                   },
                   "attrs": {
                     "text": {
-                      "text": "Web App Query\nResults",
+                      "text": "web app query\nresults",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -943,7 +939,7 @@
         },
         "size": {
           "height": 2267.133544921875,
-          "width": 864
+          "width": 1251.9019775390625
         }
       }
     ],
