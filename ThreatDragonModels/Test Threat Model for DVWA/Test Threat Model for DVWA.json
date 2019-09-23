@@ -60,6 +60,14 @@
                   "type": "Information disclosure",
                   "description": "This application has failed to encrypt network traffic. SSL/TLS has not been implemented leading which exposes data, credentials and session ID's to interception.",
                   "mitigation": "It is recommended that Applications should use SSL/TLS for protecting all communications passing between the client and the server."
+                },
+                {
+                  "status": "Open",
+                  "severity": "Low",
+                  "title": "Using Components with known vulnerabilities",
+                  "type": "Information disclosure",
+                  "description": "Components, especially outdated libraries, frameworks and services should never be used when there are known vulnerabilities in the applications could lead to possibility of exploitation. \n\nVulnerabilities in libraries and software are extremely common and could be used to compromise the security of systems using the software. If the components, framework, services, etc. of an application are not properly designed in a secure way, then the attacker takes this as an advantage to break your system. In this case, the application is using Vulnerable OpenSSL/1.1.1c",
+                  "mitigation": "Make sure that the frameworks, services, modules and components that are in use in your web applications are the latest versions."
                 }
               ],
               "attrs": {
@@ -182,6 +190,14 @@
                   "type": "Spoofing",
                   "description": "Session Fixation is an attack that permits an attacker to hijack a valid user session. The attack explores a limitation in the way the web application manages the session ID, more specifically the vulnerable web application. When authenticating a user, it doesn't assign a new session ID, making it possible to use an existent session ID. The attack consists of inducing a user to authenticate himself with a known session ID, and then hijacking the user-validated session by the knowledge of the used session ID. The attacker has to provide a legitimate Web application session ID and try to make the victim's browser use it.",
                   "mitigation": "Web applications must ignore any session ID provided by the user's browser at login and must always generate a new session to which the user will log in if successfully authenticated."
+                },
+                {
+                  "status": "Open",
+                  "severity": "Low",
+                  "title": "Cookie Not Marked as HttpOnly",
+                  "description": "We identified a cookie - PHPSESSID not marked as HTTPOnly.\n\nHTTPOnly cookies cannot be read by client-side scripts, therefore marking a cookie as HTTPOnly can provide an additional layer of protection against cross-site scripting attacks.\n\nDuring a cross-site scripting attack, an attacker might easily access cookies and hijack the victim's session.",
+                  "mitigation": "Mark the cookie as HTTPOnly. This will be an extra layer of defense against XSS.",
+                  "type": "Spoofing"
                 }
               ],
               "attrs": {
